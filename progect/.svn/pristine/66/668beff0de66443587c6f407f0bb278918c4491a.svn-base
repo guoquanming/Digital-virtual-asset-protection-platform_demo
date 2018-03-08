@@ -1,0 +1,11 @@
+from django.conf.urls import url
+from django.conf.urls import url, include
+from . import views
+from . import add
+
+urlpatterns = [
+    # url(r'^test', test.insert),
+    # url(r'^view', views.hello2),
+    url(r'^$', views.hello),
+    url(r'^add$', add.add),
+]

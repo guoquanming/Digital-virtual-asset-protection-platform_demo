@@ -1,0 +1,5 @@
+from firstapp.models import *
+
+
+                    # author.name="alvin"
+                    # author.save()

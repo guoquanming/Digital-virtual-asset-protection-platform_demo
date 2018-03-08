@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+黑客攻克平台后拿到数据的下载地址：
+<ul>
+{% for a in hacker_data %}
+    <li><a href="http://{{ a.url }}">{{ a.title}}</a></li>
+{% endfor %}
+</ul>
+
+
+</body>
+</html>

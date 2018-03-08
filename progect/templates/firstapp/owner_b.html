@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>owner_b</title>
+
+
+
+
+
+</head>
+
+<body>
+数据所有者待处理的数据请求：
+<ul>
+    {% for a in ask_data %}
+<form action="/review" method="post">
+        {% csrf_token %}
+{#根据licensetype类型显示该数据的授权状态#}
+{% if a.licensetype == '1' %}
+  <li><input type="submit" name="y" value="已通过" ><input type="text" name="q" value="{{ a.recordid }}" style="display:none">
+        {{ a.dataid_id}}  申请人：<a href="{{ a.authorizedperson}}">{{ a.authorizedperson  }} </a> </li>
+{% elif a.licensetype == '0' %}
+   <li><input type="submit" name="y" value="未通过"><input type="text" name="q" value="{{ a.recordid }}" style="display:none">
+        {{ a.dataid_id}}  申请人：<a href="{{ a.authorizedperson}}">{{ a.authorizedperson  }}</a></li>
+
+{% endif %}
+
+
+</form>
+    {% endfor %}
+</ul>
+
+
+</body>
+</html>

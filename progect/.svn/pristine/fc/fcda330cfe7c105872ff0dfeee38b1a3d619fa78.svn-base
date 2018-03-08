@@ -1,0 +1,12 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+def index(request):
+    return render(request, '../templates/firstapp/hello.html')
+
+
+def add(request):
+    a = request.GET['q']
+    b ='succeed'
+    c = a+b
+    return HttpResponse(c)
+
